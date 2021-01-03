@@ -1,6 +1,6 @@
 # Japanese Vocabulary Revision Analysis: Overview
 
-Over the work-from-home period of Covid-19 lockdown I have been taking my Japanese studies more seriously, in particular around finally focus on writing Kanji. For anyone familiar with Kanji, they can appreciate the vast range of characters required to be mastered, and this was something I have previously struggled with.
+Over the work-from-home period of Covid-19 lockdown, I have been taking my Japanese studies more seriously, in particular around finally focus on writing Kanji. For anyone familiar with Kanji, they can appreciate the vast range of characters required to be mastered, and this was something I have previously struggled with.
 
 While there are great revision apps already on the market, I wanted to kill two birds with one stone and create my own revision program in Python, as another avenue of self-development.
 
