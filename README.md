@@ -10,10 +10,10 @@ This Data Science project was aimed to help improve my understanding of my learn
 
 **_Tl;dr:_**
 * Context: Created a revision algorithm using spaced repetition for studying Japanese vocabulary.
-* Built Analysis tool which 
+* Built Analysis tool to verify effectiveness on spaced repetition boundaries used.
 * Scraped additional detail on vocabulary to provide further insights.
 * Analysed data to confirm algorithm was appropriately tuned to enhance my efficiency at learning.
-* Found which spacing metrics were most effective for personal learning and retention.
+* X% faster at learning (to master level, to expert level), %Y percent higher efficiency rate
 
 ##  Code and resources
 * Python version: 3.7
