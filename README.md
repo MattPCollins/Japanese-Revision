@@ -45,6 +45,8 @@ The ever useful Japanese online dictionary site [Jisho](https://jisho.org/) cont
 
 ## EDA
 I investigated the data distributions and statistics across the dataset. My most informative findings are below:
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screen%20Shot%202021-01-04%20at%2012.47.54.png "Poor retention")
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screen%20Shot%202021-01-04%20at%2012.44.52.png "Distribution of vocabulary grades")
 
 ## Model Tuning
 
