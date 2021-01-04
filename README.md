@@ -13,7 +13,7 @@ This Data Science project was aimed to help improve my understanding of my learn
 * Built Analysis tool to verify effectiveness on spaced repetition boundaries used.
 * Scraped additional detail on vocabulary to provide further insights.
 * Analysed data to confirm algorithm was appropriately tuned to enhance my efficiency at learning.
-* X% faster at learning (to master level, to expert level), %Y percent higher efficiency rate
+* X% faster at learning while retaining long term recollection.
 
 ##  Code and resources
 * Python version: 3.7
@@ -24,7 +24,10 @@ A lot of the data is separated into different fact and dimension files for repor
 
 **Existing data:**
 * Dimensional Dictionary csv file
-    * example table
+|   Word Index  |    English    |    Hiragana   |      Kanji    |    Date Added | Rank         |    Sample    |
+| ------------- | ------------- | ------------- | ------------- | ------------- |------------- |------------- |
+| 0             | house         | いえ　         |  家           | 09/05/2020    | 1 | 1 |
+| 1             | in the end    |　ひこうき     　| 飛行機         |  04/06/2020   | 5 | 2 |
 * Dimensional Streak csv file
 * Fact Results csv file
 * Fact Streak csv file
