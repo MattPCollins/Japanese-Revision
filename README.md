@@ -89,7 +89,17 @@ The analysis phase began gathering insights on the data in the following fields:
 * Words per sample
 * 
 
-Given that I want to evaluate the performance of a sample of data
+I consider a streak of 5 to be when I have mastered a word and as such want to evaluate the time taken to get here and the recollection ability at this point. 
+Before digging into the data and drawing comparisons, I made a note that the data in sample 1 has gone through several iterations as the algorithm has been improved during the creation of the app. As can be seen in the below graph, the month-on-month average number of days for a word to reach streak 5 for the sample has decreased over time as the model has improved. Due to this, I am drawing comparisions for words from 09/2020 onwards.
+
+
+Given that I want to evaluate the performance of each sample, understanding their weak points is important. The below visual shows the number of occurrences a word decreased from streak n to n-1.
+
+This shows that across the samples, streak 5 is generally the weakest (we ignore streak 0 as the word is just being learned for the first time and we do expect failures!), hence is a good target to improve upon.
+
+
+The following results show 
+
 
 I investigated the data distributions and statistics across the dataset. My most informative findings are below:
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screen%20Shot%202021-01-04%20at%2012.47.54.png "Poor retention")
