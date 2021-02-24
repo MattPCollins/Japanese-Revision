@@ -87,6 +87,7 @@ Not sure any of above is useful for this...
 The analysis phase began gathering insights on the data in the following fields:
 * Words per JLPT grades
 * Words per sample
+* Words per day(?)
 * 
 
 I consider a streak of 5 to be when I have mastered a word and as such want to evaluate the time taken to get here and the recollection ability at this point. 
