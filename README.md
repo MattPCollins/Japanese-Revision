@@ -10,7 +10,7 @@ This Data Science project was aimed to help improve my understanding of my learn
 
 **_Tl;dr:_**
 * Context: Created a revision algorithm using spaced repetition for studying Japanese vocabulary.
-* Built Analysis tool to verify effectiveness on spaced repetition boundaries used.
+* Built Analysis tool to verify effectiveness on spaced repetition boundaries (streak thresholds) used.
 * Scraped additional detail on vocabulary to provide further insights.
 * Analysed data to confirm algorithm was appropriately tuned to enhance my efficiency at learning.
 * X% faster at learning while retaining long term recollection.
@@ -23,12 +23,12 @@ This Data Science project was aimed to help improve my understanding of my learn
 A lot of the data is separated into different fact and dimension files for reporting purposes and so is not in the correct format to perform analysis on in the raw state. As this was my own dataset, I had created it with this kind of project work in mind so there was not much cleaning which was necessary.
 
 **Existing data:**
-* Dimensional Dictionary csv file (example rows below)
+* Dimensional Dictionary csv file (example rows below in screenshot)
 
 |   Word Index  |    English    |    Hiragana   |      Kanji    |    Date Added | Rank         |    Sample    |
 | ------------- | ------------- | ------------- | ------------- | ------------- |------------- |------------- |
-| 0             | house         | いえ　         |  家           | 09/05/2020    | 1 | 1 |
-| 1             | in the end    |　ひこうき     　| 飛行機         |  04/06/2020   | 5 | 2 |
+| 0             | house         | いえ　         |  家           | 09/05/2020    |      1       |      1       |
+| 1             | in the end    |　ひこうき     　| 飛行機         |  04/06/2020   |      5       |      2       |
 
 * Dimensional Streak csv file
 * Fact Results csv file
@@ -52,6 +52,20 @@ The ever useful Japanese online dictionary site [Jisho](https://jisho.org/) cont
 I investigated the data distributions and statistics across the dataset. My most informative findings are below:
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screen%20Shot%202021-01-04%20at%2012.47.54.png "Poor retention")
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screen%20Shot%202021-01-04%20at%2012.44.52.png "Distribution of vocabulary grades")
+
+The algorithm determines when a word next needs to be practiced based on a list, where the elements represent the number of days before the next attempt needs to be taken. The data contains 'samples', which use different variations of this list, as seen below:
+Notes: include 1,4,5
+When the model was first created, only sample 1 existed, whcih was refined and improved over time as can be seen in the following graph - for words added to the dicitionary on a month-by-month basis we can see that the average number of days to reach streak N decreased, through a combination of improving the model and refining the sample values.
+However, the values in this list were arbtitrarily chosen, and efficiency could not be guaranteed. As a result, further samples were introduced for newly added words to compare the efficiencies and ensure a more optimal model was being used based on my practice rates and short comings.
+
+Note: from above graph, we have seen a min point in Nov and Dec 2020. Limit data from sample 1 to avoid any misleading statistics.
+
+What was I interested in seeing:
+Streak regression for each sample
+Min days to streak N and streak M
+Avg days to streak N and streak M
+Variation in above.
+Avg success for samples
 
 ## Model Tuning
 
