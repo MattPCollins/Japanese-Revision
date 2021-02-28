@@ -24,7 +24,7 @@ This Data Science project was aimed to help improve my understanding of my learn
 * Packages: pandas, numpy, matplotlib, seaborn, json, BeautifulSoup, datetime, webbrowser, re, requests
 
 ## Data Cleaning
-A lot of the data is separated into different fact and dimension files for reporting purposes and so is not in the correct format to perform analysis on in the raw state. As this was my own dataset, I had created it with this kind of project work in mind so there was not much cleaning which was necessary.
+A lot of the data is separated into different fact and dimension files for reporting purposes and so is not in the correct format to perform analysis on in the raw state. As this was my own dataset, I had created it with this kind of project work in mind so there was not much cleaning that was necessary.
 
 **Existing data:**
 * Dimensional Dictionary csv file
@@ -67,9 +67,6 @@ To make all this data usable and useful during analysis, I performed the followi
 * Concatenated the tables to get column for latest streak of the word
 * Added columns for total attempts, total successful attempts and total unsuccessful attempts
 * Created age column for more useful interpretation in time-series analysis later
-^not sure I care about this^
-
-
 
 **Missing Data:**
 * Japanese Learning Proficiency Test (JLPT) grade
