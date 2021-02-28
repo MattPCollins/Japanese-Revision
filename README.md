@@ -90,6 +90,7 @@ The analysis phase began gathering insights on the data in the following fields:
 I consider a streak of 5 to be when I have mastered a word and as such want to evaluate the time taken to get here and the recollection ability at this point. 
 Before digging into the data and drawing comparisons, I made a note that the data in sample 1 has gone through several iterations as the algorithm has been improved during the creation of the app. As can be seen in the below graph, the month-on-month average number of days for a word to reach streak 5 for the sample has decreased over time as the model has improved. Due to this, I am drawing comparisions for words from 09/2020 onwards.
 
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample1_all.png "Streak Degradation: Sample 1")
 
 Given that I want to evaluate the performance of each sample, understanding their weak points is important. The below visual shows the number of occurrences a word decreased from streak n to n-1.
 
