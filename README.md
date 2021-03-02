@@ -60,9 +60,13 @@ A lot of the data is separated into different fact and dimension files for repor
 |5621|	612|	1|	19/02/2021|	5|
 
 The samples referred to above are the following lists:
+
 Sample 1 = [0, 1, 2, 4, 7, 12, 12, 31, 31, 31, 31]
+
 Sample 4 = [0, 1, 2, 3, 5, 10, 10, 31, 31, 31, 31]
+
 Sample 5 = [0, 1, 1, 2, 4, 6, 10, 10, 31, 31, 31, 31]
+
 Each element represents the # days that must pass from the last practiced attempt before the word is next practiced at the given streak.
 
 To make all this data usable and useful during analysis, I performed the following actions:
