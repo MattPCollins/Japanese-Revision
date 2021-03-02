@@ -23,7 +23,7 @@ This Data Science project was aimed to help improve my understanding of my learn
 * Python version: 3.7
 * Packages: pandas, numpy, matplotlib, seaborn, json, BeautifulSoup, datetime, webbrowser, re, requests
 
-## Data Cleaning
+## Data Collection
 A lot of the data is separated into different fact and dimension files for reporting purposes and so is not in the correct format to perform analysis on in the raw state. As this was my own dataset, I had created it with this kind of project work in mind so there was not much cleaning that was necessary.
 
 **Existing data:**
@@ -69,6 +69,7 @@ Sample 5 = [0, 1, 1, 2, 4, 6, 10, 10, 31, 31, 31, 31]
 
 Each element represents the # days that must pass from the last practiced attempt before the word is next practiced at the given streak.
 
+## Data Cleaning
 To make all this data usable and useful during analysis, I performed the following actions:
 * Concatenated the tables to get column for latest streak of the word
 * Added columns for total attempts, total successful attempts and total unsuccessful attempts
@@ -77,8 +78,11 @@ To make all this data usable and useful during analysis, I performed the followi
 **Missing Data:**
 * Japanese Learning Proficiency Test (JLPT) grade
 * Generalised level (personal grade boundaries)
+--Bump?
 
-I would need to do some scraping to get the JLPT grades for each word / expression, as this was something not included in my data. I also wanted some qualitative description of the streak values, which demonstrates my mastery of the vocabulary.
+I would need to do some scraping to get the JLPT grades for each word / expression, as this was something not included in my data. 
+I also wanted some qualitative description of the streak values, which demonstrates my mastery of the vocabulary.
+--Bump?
 
 ### Web Scraping
 The ever useful Japanese online dictionary site [Jisho](https://jisho.org/) contained the JLPT grades I needed for this analysis. Looping through each word in my personal dictionary and scraping the relevant JLPT grade from the site was then added to my Pandas DataFrame.
@@ -91,27 +95,67 @@ The analysis phase began gathering insights on the data in the following fields:
 * Words per JLPT grades
 * Words per sample
 * Words per day(?)
-* 
+-- Note which files this data comes from 
+
+Now that I have some insight into how my data is categorised and what my efforts look like on a day-to-day basis, I want to see how I can improve the efficiency of my studies: minimizing the time to learn a word and maintain long-term recollection of it.
 
 I consider a streak of 5 to be when I have mastered a word and as such want to evaluate the time taken to get here and the recollection ability at this point. 
 Before digging into the data and drawing comparisons, I made a note that the data in sample 1 has gone through several iterations as the algorithm has been improved during the creation of the app. As can be seen in the below graph, the month-on-month average number of days for a word to reach streak 5 for the sample has decreased over time as the model has improved. Due to this, I am drawing comparisions for words from 09/2020 onwards.
 
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample1_all.png "Rolling Avg Duration: Sample 1")
 
+Comparing the average number of days to this target streak for each sample against both each other, and the minimum number of days possible for the sample itself, I found the following results.
+
+Sample 1  
+Absolute minimum of 15 days to reach streak 5 for sample 1  
+Number of words in sample: 121  
+Average of 29.61 days to reach streak 5 for sample 1  
+Observed minimum of 14 days to reach streak 5 for sample 1  
+Observed maximum of 149 days to reach streak 5 for sample 1  
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample1_recent.png "Rolling Avg Duration: Sample 1 Short")
+*note anomaly: min of 15, somehow observed min of 14
+
+Sample 4  
+Absolute minimum of 12 days to reach streak 5 for sample 4  
+Number of words in sample: 19  
+Average of 24.89 days to reach streak 5 for sample 4  
+Observed minimum of 14 days to reach streak 5 for sample 4  
+Observed maximum of 45 days to reach streak 5 for sample 4  
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample4.png "Rolling Avg Duration: Sample 4")
+
+Sample 5  
+Absolute minimum of 9 days to reach streak 5 for sample 5  
+Number of words in sample: 16  
+Average of 25.62 days to reach streak 5 for sample 5  
+Observed minimum of 15 days to reach streak 5 for sample 5  
+Observed maximum of 44 days to reach streak 5 for sample 5  
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample5.png "Rolling Avg Duration: Sample 5")
 
+The boxplot below gives greater weight to these results, showing the variation between the samples, and how the data truly sits.
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/boxplot.png "Boxplot")
+
+The larger sample of data for sample 1
+th
+streak 5 - why: this has a larger range, far fewer outliers.
+
+
+
+
 Given that I want to evaluate the performance of each sample, understanding their weak points is important. The below visuals shows the number of occurrences a word decreased from streak n to n-1.
+the following graph shows streak 5 to be a weak point - potentially too greater time between previous streaks to retain the spelling (would maybe look at the distribution of words in each rank (normalise for each sample)
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_decrease_sample1.png "Streak Degradation: Sample 1")
+
+
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_decrease_sample4.png "Streak Degradation: Sample 4")
+
+more consistent degradations (potentially not enough data collected), suggesting good retention generally between each streak.
+ideally want comparable sample sizes. (potentially shrink sample 1, add more words to 4 and 5 (3 each, daily)
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_decrease_sample5.png "Streak Degradation: Sample 5")
 
 
 This shows that across the samples, streak 5 is generally the weakest (we ignore streak 0 as the word is just being learned for the first time and we do expect failures!), hence is a good target to improve upon.
 
-
-The following results show 
+Evaluating the 
 
 
 I investigated the data distributions and statistics across the dataset. My most informative findings are below:
