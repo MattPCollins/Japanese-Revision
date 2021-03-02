@@ -60,7 +60,9 @@ A lot of the data is separated into different fact and dimension files for repor
 |5621|	612|	1|	19/02/2021|	5|
 
 The samples referred to above are the following lists:
-1,4,5 lists
+Sample 1 = [0, 1, 2, 4, 7, 12, 12, 31, 31, 31, 31]
+Sample 4 = [0, 1, 2, 3, 5, 10, 10, 31, 31, 31, 31]
+Sample 5 = [0, 1, 1, 2, 4, 6, 10, 10, 31, 31, 31, 31]
 Each element represents the # days that must pass from the last practiced attempt before the word is next practiced at the given streak.
 
 To make all this data usable and useful during analysis, I performed the following actions:
@@ -90,9 +92,17 @@ The analysis phase began gathering insights on the data in the following fields:
 I consider a streak of 5 to be when I have mastered a word and as such want to evaluate the time taken to get here and the recollection ability at this point. 
 Before digging into the data and drawing comparisons, I made a note that the data in sample 1 has gone through several iterations as the algorithm has been improved during the creation of the app. As can be seen in the below graph, the month-on-month average number of days for a word to reach streak 5 for the sample has decreased over time as the model has improved. Due to this, I am drawing comparisions for words from 09/2020 onwards.
 
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample1_all.png "Streak Degradation: Sample 1")
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample1_all.png "Rolling Avg Duration: Sample 1")
 
-Given that I want to evaluate the performance of each sample, understanding their weak points is important. The below visual shows the number of occurrences a word decreased from streak n to n-1.
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample1_recent.png "Rolling Avg Duration: Sample 1 Short")
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample4.png "Rolling Avg Duration: Sample 4")
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample5.png "Rolling Avg Duration: Sample 5")
+
+Given that I want to evaluate the performance of each sample, understanding their weak points is important. The below visuals shows the number of occurrences a word decreased from streak n to n-1.
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_decrease_sample1.png "Streak Degradation: Sample 1")
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_decrease_sample4.png "Streak Degradation: Sample 4")
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_decrease_sample5.png "Streak Degradation: Sample 5")
+
 
 This shows that across the samples, streak 5 is generally the weakest (we ignore streak 0 as the word is just being learned for the first time and we do expect failures!), hence is a good target to improve upon.
 
