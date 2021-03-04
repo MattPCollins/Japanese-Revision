@@ -1,23 +1,23 @@
 # Japanese Vocabulary Revision Analysis: Overview
 
-Over the work-from-home period of Covid-19 lockdown, I have been taking my Japanese studies more seriously, in particular around finally focus on writing Kanji. For anyone familiar with Kanji, they can appreciate the vast range of characters required to be mastered, and this was something I have previously struggled with.
+Over the work-from-home period of Covid-19 lockdown, I have been taking my Japanese studies more seriously, with a particular focus on writing Kanji. For anyone familiar with Kanji, they can appreciate the vast range of characters required to be mastered, and this was something I have previously struggled with.
 
 While there are great revision apps already on the market, I wanted to kill two birds with one stone and create my own revision program in Python, as another avenue of self-development.
 
 ## App Background
 I created my own space repetition algorithm and populated my own dictionary of vocabulary to study. I created fact and dimensional tables to model my results and track my progress.
 
-My algorithm was experimentally created at first, but then introduced different samples of spaced repetition boundaries to better tune the efficiency of my learning. Spaced repetition is a learning technique that says "the more familiar you become with the thing in question (in my case, vocabulary) the more the interval between practice attempts increases". I measure this by increasing and decreasing the 'streak' of a word after it has been practiced. A word with a low streak needs to be practiced more frequently; a word with a high streak needs to be practiced less frequently.
+My algorithm was experimentally created at first, but then introduced different samples of spaced repetition boundaries to better tune the efficiency of my learning. Spaced repetition is a learning technique that says "the more familiar you become with the thing in question (in my case, vocabulary) the greater the interval between practice attempts increases". I measure this by increasing and decreasing the 'streak' of a word after it has been practiced. A word with a low streak needs to be practiced more frequently; a word with a high streak needs to be practiced less frequently.
 
-This Data Science project was aimed to help improve my understanding of my learning efforts since May, and guide my findings.
+This Data Science project was aimed to help improve my understanding of my learning efforts since May 2020, and guide my findings.
 
-**_Tl;dr:_**
+**_TL;DR:_**
 * Context: Created a revision algorithm using spaced repetition for studying Japanese vocabulary.
 * Built Analysis tool to verify effectiveness on spaced repetition algorithm used.
 * Scraped additional detail on vocabulary to provide further insights.
 * Practiced vocabulary using different samples of boundaries in spaced repetition algorithm
 * Analysed data to confirm algorithm was appropriately tuned to enhance my efficiency at learning.
-* Chose sample with X% faster learning rate that demonstrated long term recollection.
+* Chose sample with X% faster learning rate that demonstrated long-term recollection.
 
 ##  Code and resources
 * Python version: 3.7
@@ -48,13 +48,20 @@ A lot of the data is separated into different fact and dimension files for repor
 
 * Fact Results csv file
 
+|   |  Word Index  |    Index Relation     |    Result  |      Date    |  Time |
+| - |------------- | -------------  | --------- | -------------- | ----- | 
+|1|35|4|1|14/05/2020|23:39:27|
+|2|9|5|1|14/05/2020|23:39:40|
+|...|...            |...  |... |...        |...   |
+|16890|492|0|1|03/03/2021|18:24:12|
+|16891|611|0|1|03/03/2021|18:24:22|
 
 * Fact Streak csv file
 
 | |  Word Index  |    Streak     |    Date   |      Sample    | 
 | - |------------- | ------------- | --------- | -------------- | 
 |1|1	|10|05/10/2020|	1|
-|0|	1|	8|	04/08/2020|	1|
+|2|	1|	8|	04/08/2020|	1|
 |... |...  |... |...        |...   |
 |5620|	611|	1|	19/02/2021|	4|
 |5621|	612|	1|	19/02/2021|	5|
@@ -135,8 +142,10 @@ The boxplot below gives greater weight to these results, showing the variation b
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/boxplot.png "Boxplot")
 
 The larger sample of data for sample 1
-th
-streak 5 - why: this has a larger range, far fewer outliers.
+
+streak 4 - 
+
+Generally the words in this sample have been more consistently in less time than the other samples. slightly more outliers than sample 5, but given the spread of data is closer to the average makes it a better choice.
 
 
 
