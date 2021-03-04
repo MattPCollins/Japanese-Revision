@@ -78,23 +78,18 @@ Each element represents the # days that must pass from the last practiced attemp
 
 ## Data Cleaning
 To make all this data usable and useful during analysis, I performed the following actions:
-* Concatenated the tables to get column for latest streak of the word
-* Added columns for total attempts, total successful attempts and total unsuccessful attempts
-* Created age column for more useful interpretation in time-series analysis later
+* Concatenated data for word-by-word analysis, including success measures
+* Scraped missing data descriptions
+* Converted date data for time-series analysis purposes
 
 **Missing Data:**
 * Japanese Learning Proficiency Test (JLPT) grade
 * Generalised level (personal grade boundaries)
---Bump?
 
-I would need to do some scraping to get the JLPT grades for each word / expression, as this was something not included in my data. 
+I would need to do some scraping to get the JLPT grades for each word / expression, as this was something not included in my data. The ever useful Japanese online dictionary site [Jisho](https://jisho.org/) contained the JLPT grades I needed for this analysis. Looping through each word in my personal dictionary and scraping the relevant JLPT grade from the site was then added to my Pandas DataFrame.
+
 I also wanted some qualitative description of the streak values, which demonstrates my mastery of the vocabulary.
---Bump?
 
-### Web Scraping
-The ever useful Japanese online dictionary site [Jisho](https://jisho.org/) contained the JLPT grades I needed for this analysis. Looping through each word in my personal dictionary and scraping the relevant JLPT grade from the site was then added to my Pandas DataFrame.
-
--- show final result --
 
 ## Exploratory Data Analysis
 Not sure any of above is useful for this...
@@ -102,7 +97,11 @@ The analysis phase began gathering insights on the data in the following fields:
 * Words per JLPT grades
 * Words per sample
 * Words per day(?)
--- Note which files this data comes from 
+* Age vs streak achieved
+-- Note which files this data comes from (?)
+
+This initial investigation gave me some insight I had overlooked initially: Some of the older words (possibly configured with poor streak boundaries / streak practice thresholds (new phrasing to use?)) have not been able to progress particularly far. 
+This led me to implement logic in my program which raises these words as a notification for me, giving the option to reset the word back to streak 0, for re-practicing. Resetting these means that the words are practiced more frequently again, and I have a better chance of recollection. I will store these refreshed words to keep a specific view on, which will be investigated separate to this project.
 
 Now that I have some insight into how my data is categorised and what my efforts look like on a day-to-day basis, I want to see how I can improve the efficiency of my studies: minimizing the time to learn a word and maintain long-term recollection of it.
 
