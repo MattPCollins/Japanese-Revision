@@ -76,6 +76,8 @@ Sample 5 = [0, 1, 1, 2, 4, 6, 10, 10, 31, 31, 31, 31]
 
 Each element represents the # days that must pass from the last practiced attempt before the word is next practiced at the given streak.
 
+Please note I have not detailed each column as several are out-of-scope for this project.
+
 ## Data Cleaning
 To make all this data usable and useful during analysis, I performed the following actions:
 * Concatenated data for word-by-word analysis, including success measures
@@ -92,13 +94,22 @@ I also wanted some qualitative description of the streak values, which demonstra
 
 
 ## Exploratory Data Analysis
-Not sure any of above is useful for this...
 The analysis phase began gathering insights on the data in the following fields:
 * Words per JLPT grades
 * Words per sample
 * Words per day(?)
 * Age vs streak achieved
 -- Note which files this data comes from (?)
+
+First up is the daily count of practices. We can see that when this project started back in May and June last year the number of daily practices was a lot higher, no doubt enhanced by the initial enthusiasm and energy to the project in lockdown, but also due to the inefficiency of some aspects of the model and algorithm, which required more random practices to ensure all words required that day were practiced. As this was tuned, fewer attempts were required and the numbers generally drop.
+
+
+
+Breaking down the size of my samples gives me confidence that I am evaluating and drawing conclusions on an appropriate sample of data. We are ignoring sample 2 and 3 for the purpose of this research, but do not beed to go into this here. Sample 1 also has been subject to many changes in the underlying code during the lifecycle of this project, so a subset of this is used for analysis - I shall explain this a bit later on.
+
+
+
+
 
 This initial investigation gave me some insight I had overlooked initially: Some of the older words (possibly configured with poor streak boundaries / streak practice thresholds (new phrasing to use?)) have not been able to progress particularly far. 
 This led me to implement logic in my program which raises these words as a notification for me, giving the option to reset the word back to streak 0, for re-practicing. Resetting these means that the words are practiced more frequently again, and I have a better chance of recollection. I will store these refreshed words to keep a specific view on, which will be investigated separate to this project.
@@ -146,36 +157,21 @@ streak 4 -
 
 Generally the words in this sample have been more consistently in less time than the other samples. slightly more outliers than sample 5, but given the spread of data is closer to the average makes it a better choice.
 
-
-
-
 Given that I want to evaluate the performance of each sample, understanding their weak points is important. The below visuals shows the number of occurrences a word decreased from streak n to n-1.
 the following graph shows streak 5 to be a weak point - potentially too greater time between previous streaks to retain the spelling (would maybe look at the distribution of words in each rank (normalise for each sample)
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_decrease_sample1.png "Streak Degradation: Sample 1")
 
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_decrease_sample1.png "Streak Degradation: Sample 1")
 
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_decrease_sample4.png "Streak Degradation: Sample 4")
 
 more consistent degradations (potentially not enough data collected), suggesting good retention generally between each streak.
 ideally want comparable sample sizes. (potentially shrink sample 1, add more words to 4 and 5 (3 each, daily)
+
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_decrease_sample5.png "Streak Degradation: Sample 5")
 
 
 This shows that across the samples, streak 5 is generally the weakest (we ignore streak 0 as the word is just being learned for the first time and we do expect failures!), hence is a good target to improve upon.
 
-Evaluating the 
-
-
-I investigated the data distributions and statistics across the dataset. My most informative findings are below:
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screen%20Shot%202021-01-04%20at%2012.47.54.png "Poor retention")
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screen%20Shot%202021-01-04%20at%2012.44.52.png "Distribution of vocabulary grades")
-
-The algorithm determines when a word next needs to be practiced based on a list, where the elements represent the number of days before the next attempt needs to be taken. The data contains 'samples', which use different variations of this list, as seen below:
-Notes: include 1,4,5
-When the model was first created, only sample 1 existed, whcih was refined and improved over time as can be seen in the following graph - for words added to the dicitionary on a month-by-month basis we can see that the average number of days to reach streak N decreased, through a combination of improving the model and refining the sample values.
-However, the values in this list were arbtitrarily chosen, and efficiency could not be guaranteed. As a result, further samples were introduced for newly added words to compare the efficiencies and ensure a more optimal model was being used based on my practice rates and short comings.
-
-Note: from above graph, we have seen a min point in Nov and Dec 2020. Limit data from sample 1 to avoid any misleading statistics.
 
 What was I interested in seeing:
 Streak regression for each sample
