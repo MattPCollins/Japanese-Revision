@@ -179,14 +179,7 @@ Generally the words in this sample have been more consistently in less time than
 Given that I want to evaluate the performance of each sample, understanding their weak points is important. The below visuals shows the number of occurrences a word decreased from level n to n-1.
 the following graph shows level 5 to be a weak point - potentially too greater time between previous levels to retain the spelling (would maybe look at the distribution of words in each rank (normalise for each sample)
 
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_decrease_sample1.png "Level Degradation: Sample 1")
-
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_decrease_sample4.png "Level Degradation: Sample 4")
-
-more consistent degradations (potentially not enough data collected), suggesting good retention generally between each level.
-ideally want comparable sample sizes. (potentially shrink sample 1, add more words to 4 and 5 (3 each, daily)
-
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_decrease_sample5.png "Level Degradation: Sample 5")
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/level_regression_hist.png "Level Degradations")
 
 
 This shows that across the samples, level 5 is generally the weakest (we ignore level 0 as the word is just being learned for the first time and we do expect failures!), hence is a good target to improve upon.
