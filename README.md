@@ -101,9 +101,24 @@ The analysis phase began gathering insights on the data in the following fields:
 * Age vs level achieved
 -- Note which files this data comes from (?)
 
-*plot here!
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/daily_practice.png "Daily Practice Attempts")
+
 
 First up is the daily count of practices. We can see that when this project started back in May and June last year the number of daily practices was a lot higher, no doubt enhanced by the initial enthusiasm and energy to the project in lockdown, but also due to the inefficiency of some aspects of the model and algorithm, which required more random practices to ensure all words required that day were practiced. As this was tuned, fewer attempts were required and the numbers generally drop.
+
+
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_age_plot.png "Level vs Age")
+
+description of why look at scatter plot
+
+This initial investigation gave me some insight I had overlooked initially: Some of the older words (possibly configured with poor level-up boundaries) have not been able to progress completely, and due to the greater time between attempts at higher levels, are more easily forgotten and get stuck at the current level.
+
+Going back to the EDA phase, another column was added to the DataFrame named 'Reset'. This describes a word that does or does not need to be set back to level zero given its age - this is best described in the revised scatter plot below:
+
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_age_plot_reset.png "Level vs Age: 'Reset to level 0'.")
+
+
+This led me to implement logic in my program which raises these words as a notification for me, giving the option to reset the word back to level 0, for re-practicing. Resetting these means that the words are practiced more frequently again, and I have a better chance of recollection. I will store these refreshed words to keep a specific view on, which will be investigated separate to this project.
 
 
 *plot here!
@@ -111,18 +126,6 @@ First up is the daily count of practices. We can see that when this project star
 
 Breaking down the size of my samples gives me confidence that I am evaluating and drawing conclusions on an appropriate sample of data. We are ignoring sample 2 and 3 for the purpose of this research, but do not need to go into this here. Sample 1 also has been subject to many changes in the underlying code during the lifecycle of this project, so a subset of this is used for analysis - I shall explain this a bit later on.
 
-
-*plot here!
-
-
-
-This initial investigation gave me some insight I had overlooked initially: Some of the older words (possibly configured with poor level-up boundaries) have not been able to progress completely, and due to the greater time between attempts at higher levels, are more easily forgotten and get stuck at the current level.
-
-Going back to the EDA phase, another column was added to the DataFrame named 'Reset'. This describes a word that does or does not need to be set back to level zero given its age - this is best described in the revised scatter plot below:
-
-*plot here!
-
-This led me to implement logic in my program which raises these words as a notification for me, giving the option to reset the word back to level 0, for re-practicing. Resetting these means that the words are practiced more frequently again, and I have a better chance of recollection. I will store these refreshed words to keep a specific view on, which will be investigated separate to this project.
 
 Now that I have some insight into how my data is categorised and what my efforts look like on a day-to-day basis, I want to see how I can improve the efficiency of my studies: minimizing the time to learn a word and maintain long-term recollection of it.
 
@@ -141,7 +144,7 @@ Number of words in sample: 121
 Average of 29.61 days to reach level 5 for sample 1  
 Observed minimum of 14 days to reach level 5 for sample 1  
 Observed maximum of 149 days to reach level 5 for sample 1  
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample1_recent.png "Rolling Avg Duration: Sample 1 Short")
+![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample1.png "Rolling Avg Duration: Sample 1 Short")
 
 *note anomaly: min of 15, somehow observed min of 14
 
