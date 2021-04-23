@@ -94,12 +94,6 @@ I also wanted some qualitative description of the level values, which demonstrat
 
 
 ## Exploratory Data Analysis
-The analysis phase began gathering insights on the data in the following fields:
-* Words per JLPT grades
-* Words per sample
-* Words per day(?)
-* Age vs level achieved
--- Note which files this data comes from (?)
 
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/daily_practice.png "Daily Practice Attempts")
 
@@ -109,9 +103,9 @@ First up is the daily count of practices. We can see that when this project star
 
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_age_plot.png "Level vs Age")
 
-description of why look at scatter plot
+The scatter plot above shows the age (in days) of a word in the dictionary versus the Level. As we can expect, there is a general trend to this - over time, we expect a word to increase in level until it is retired from practice (level 10).
 
-This initial investigation gave me some insight I had overlooked initially: Some of the older words (possibly configured with poor level-up boundaries) have not been able to progress completely, and due to the greater time between attempts at higher levels, are more easily forgotten and get stuck at the current level.
+Most notably, we see that as age increases the levels for each of the words widens and diverges. This initial investigation gave me some insight I had overlooked initially: Some of the older words (possibly configured with poor level-up boundaries) have not been able to progress completely, and due to the greater time between attempts at higher levels, are more easily forgotten and get stuck at the current level.
 
 Going back to the EDA phase, another column was added to the DataFrame named 'Reset'. This describes a word that does or does not need to be set back to level zero given its age - this is best described in the revised scatter plot below:
 
@@ -130,7 +124,8 @@ Breaking down the size of my samples gives me confidence that I am evaluating an
 Now that I have some insight into how my data is categorised and what my efforts look like on a day-to-day basis, I want to see how I can improve the efficiency of my studies: minimizing the time to learn a word and maintain long-term recollection of it.
 
 I consider a level of 5 to be when I have mastered a word and as such want to evaluate the time taken to get here and the recollection ability at this point. 
-Before digging into the data and drawing comparisons, I made a note that the data in sample 1 has gone through several iterations as the algorithm has been improved during the creation of the app. As can be seen in the below graph, the month-on-month average number of days for a word to reach level 5 for the sample has decreased over time as the model has improved. Due to this, I am drawing comparisions for words from 09/2020 onwards.
+
+Before digging into the data and drawing comparisons, I made a note that the data in sample 1 has gone through several iterations as the algorithm has been improved during the creation of the app. As can be seen in the below graph, the month-on-month average number of days for a word to reach level 5 for the sample has decreased over time as the model has improved. Due to this, I am using a subset of this sample from 10/2020 onwards for the subsequent data work.
 
 *check date!
 
