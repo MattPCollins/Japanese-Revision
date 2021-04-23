@@ -127,40 +127,38 @@ I consider a level of 5 to be when I have mastered a word and as such want to ev
 
 Before digging into the data and drawing comparisons, I made a note that the data in sample 1 has gone through several iterations as the algorithm has been improved during the creation of the app. As can be seen in the below graph, the month-on-month average number of days for a word to reach level 5 for the sample has decreased over time as the model has improved. Due to this, I am using a subset of this sample from 10/2020 onwards for the subsequent data work.
 
-*check date!
-
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample1_all.png "Rolling Avg Duration: Sample 1")
 
 Comparing the average number of days to this target level for each sample against both each other, and the minimum number of days possible for the sample itself, I found the following results.
 
-Sample 1  
-Absolute minimum of 15 days to reach level 5 for sample 1  
-Number of words in sample: 121  
-Average of 29.61 days to reach level 5 for sample 1  
-Observed minimum of 14 days to reach level 5 for sample 1  
-Observed maximum of 149 days to reach level 5 for sample 1  
+*Sample 1*
+Absolute minimum of 14 days to reach level 5 for sample 1
+Number of words in sample: 91
+Average of 28.58 days to reach level 5 for sample 1
+Observed minimum of 14 days to reach level 5 for sample 1
+Observed maximum of 134 days to reach level 5 for sample 1
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample1.png "Rolling Avg Duration: Sample 1 Short")
 
-*note anomaly: min of 15, somehow observed min of 14
-
-Sample 4  
-Absolute minimum of 12 days to reach level 5 for sample 4  
-Number of words in sample: 19  
-Average of 24.89 days to reach level 5 for sample 4  
-Observed minimum of 14 days to reach level 5 for sample 4  
-Observed maximum of 45 days to reach level 5 for sample 4  
+*Sample 4*
+Absolute minimum of 11 days to reach level 5 for sample 4
+Number of words in sample: 40
+Average of 27.58 days to reach level 5 for sample 4
+Observed minimum of 14 days to reach level 5 for sample 4
+Observed maximum of 90 days to reach level 5 for sample 4
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample4.png "Rolling Avg Duration: Sample 4")
 
-Sample 5  
-Absolute minimum of 9 days to reach level 5 for sample 5  
-Number of words in sample: 16  
-Average of 25.62 days to reach level 5 for sample 5  
-Observed minimum of 15 days to reach level 5 for sample 5  
-Observed maximum of 44 days to reach level 5 for sample 5  
+*Sample 5*
+Absolute minimum of 8 days to reach level 5 for sample 5
+Number of words in sample: 40
+Average of 27.88 days to reach level 5 for sample 5
+Observed minimum of 14 days to reach level 5 for sample 5
+Observed maximum of 67 days to reach level 5 for sample 5 
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample5.png "Rolling Avg Duration: Sample 5")
 
 The boxplot below gives greater weight to these results, showing the variation between the samples, and how the data truly sits.
 ![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/boxplot.png "Boxplot")
+
+We can see that sample 1 has far more outliers than the other samples
 
 There is disparity between the sample sizes, with sample 1 accounting for about half the total size of the dictionary being looked at here.
 *HENCE NORMALISE THE DATA!!!!!
@@ -192,3 +190,18 @@ Avg success for samples
 
 
 ## Project Outcome / Things I learned
+
+
+## Next Steps
+There are a variety of other tests that I could look at in regards to measuring my long-term recollection of the vocabulary/Kanji, and I have listed some of the following avenues to explore later:
+* Percentage success of recollection after X days, per sample
+
+   For example, X = 31. After 31 days, how good am I at recalling and writing a word? Sample 5 gets me to practice the word more times in a shorter period of time, but is sufficient to store the Kanji more successfully in my long-term memory?
+
+* Does Kanji complexity impact success?
+
+   The JLPT grades, and 'ranks' I have arbitrarily assigned words based on how difficult I think they look are good indicators of how well I think I will do at recalling them, but we have not seen massive correlation between success and perceived complexity. Looking at the number of "strokes" (lines making up a Kanji) in each word may be a better indicator, and this information should be easy enough to scrape online and add as a column to the DataFrame for future analysis.
+   
+   On top of this, If a particular Kanji is frequently used, the chances are that I will be better at recalling it (at least when more words using this Kanji are added.
+   
+*
