@@ -131,31 +131,31 @@ Before digging into the data and drawing comparisons, I made a note that the dat
 
 Comparing the average number of days to this target level for each sample against both each other, and the minimum number of days possible for the sample itself, I found the following results.
 
-*Sample 1*
-Absolute minimum of 14 days to reach level 5 for sample 1
-Number of words in sample: 91
-Average of 28.58 days to reach level 5 for sample 1
-Observed minimum of 14 days to reach level 5 for sample 1
-Observed maximum of 134 days to reach level 5 for sample 1
+*Sample 1*  
+Absolute minimum of 14 days to reach level 5 for sample 1  
+Number of words in sample: 91  
+Average of 28.58 days to reach level 5 for sample 1  
+Observed minimum of 14 days to reach level 5 for sample 1  
+Observed maximum of 134 days to reach level 5 for sample 1  
 
 <img src="Screenshots/rolling_avg_sample1.png" alt="drawing" width="500"/>
 
 
-*Sample 4*
-Absolute minimum of 11 days to reach level 5 for sample 4
-Number of words in sample: 40
-Average of 27.58 days to reach level 5 for sample 4
-Observed minimum of 14 days to reach level 5 for sample 4
-Observed maximum of 90 days to reach level 5 for sample 4
+*Sample 4*  
+Absolute minimum of 11 days to reach level 5 for sample 4  
+Number of words in sample: 40  
+Average of 27.58 days to reach level 5 for sample 4  
+Observed minimum of 14 days to reach level 5 for sample 4  
+Observed maximum of 90 days to reach level 5 for sample 4  
 
 <img src="Screenshots/rolling_avg_sample4.png" alt="drawing" width="500"/>
 
-*Sample 5*
-Absolute minimum of 8 days to reach level 5 for sample 5
-Number of words in sample: 40
-Average of 27.88 days to reach level 5 for sample 5
-Observed minimum of 14 days to reach level 5 for sample 5
-Observed maximum of 67 days to reach level 5 for sample 5 
+*Sample 5*  
+Absolute minimum of 8 days to reach level 5 for sample 5  
+Number of words in sample: 40  
+Average of 27.88 days to reach level 5 for sample 5  
+Observed minimum of 14 days to reach level 5 for sample 5  
+Observed maximum of 67 days to reach level 5 for sample 5  
 
 <img src="Screenshots/rolling_avg_sample5.png" alt="drawing" width="500"/>
 
