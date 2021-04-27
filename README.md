@@ -95,13 +95,13 @@ I also wanted some qualitative description of the level values, which demonstrat
 
 ## Exploratory Data Analysis
 
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/daily_practice.png "Daily Practice Attempts")
+<img src="Screenshots/daily_practice.png" alt="drawing" width="1000"/>
 
 
 First up is the daily count of practices. We can see that when this project started back in May and June last year the number of daily practices was a lot higher, no doubt enhanced by the initial enthusiasm and energy to the project in lockdown, but also due to the inefficiency of some aspects of the model and algorithm, which required more random practices to ensure all words required that day were practiced. As this was tuned, fewer attempts were required and the numbers generally drop.
 
+<img src="Screenshots/streak_age_plot.png" alt="drawing" width="500"/>
 
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_age_plot.png "Level vs Age")
 
 The scatter plot above shows the age (in days) of a word in the dictionary versus the Level. As we can expect, there is a general trend to this - over time, we expect a word to increase in level until it is retired from practice (level 10).
 
@@ -109,7 +109,7 @@ Most notably, we see that as age increases the levels for each of the words wide
 
 Going back to the EDA phase, another column was added to the DataFrame named 'Reset'. This describes a word that does or does not need to be set back to level zero given its age - this is best described in the revised scatter plot below:
 
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/streak_age_plot_reset.png "Level vs Age: 'Reset to level 0'.")
+<img src="Screenshots/streak_age_plot_reset.png" alt="drawing" width="500"/>
 
 
 This led me to implement logic in my program which raises these words as a notification for me, giving the option to reset the word back to level 0, for re-practicing. Resetting these means that the words are practiced more frequently again, and I have a better chance of recollection. I will store these refreshed words to keep a specific view on, which will be investigated separate to this project.
@@ -127,7 +127,7 @@ I consider a level of 5 to be when I have mastered a word and as such want to ev
 
 Before digging into the data and drawing comparisons, I made a note that the data in sample 1 has gone through several iterations as the algorithm has been improved during the creation of the app. As can be seen in the below graph, the month-on-month average number of days for a word to reach level 5 for the sample has decreased over time as the model has improved. Due to this, I am using a subset of this sample from 10/2020 onwards for the subsequent data work.
 
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample1_all.png "Rolling Avg Duration: Sample 1")
+<img src="Screenshots/rolling_avg_sample1_all.png" alt="drawing" width="500"/>
 
 Comparing the average number of days to this target level for each sample against both each other, and the minimum number of days possible for the sample itself, I found the following results.
 
@@ -137,7 +137,9 @@ Number of words in sample: 91
 Average of 28.58 days to reach level 5 for sample 1
 Observed minimum of 14 days to reach level 5 for sample 1
 Observed maximum of 134 days to reach level 5 for sample 1
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample1.png "Rolling Avg Duration: Sample 1 Short")
+
+<img src="Screenshots/rolling_avg_sample1.png" alt="drawing" width="500"/>
+
 
 *Sample 4*
 Absolute minimum of 11 days to reach level 5 for sample 4
@@ -145,7 +147,8 @@ Number of words in sample: 40
 Average of 27.58 days to reach level 5 for sample 4
 Observed minimum of 14 days to reach level 5 for sample 4
 Observed maximum of 90 days to reach level 5 for sample 4
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample4.png "Rolling Avg Duration: Sample 4")
+
+<img src="Screenshots/rolling_avg_sample4.png" alt="drawing" width="500"/>
 
 *Sample 5*
 Absolute minimum of 8 days to reach level 5 for sample 5
@@ -153,10 +156,12 @@ Number of words in sample: 40
 Average of 27.88 days to reach level 5 for sample 5
 Observed minimum of 14 days to reach level 5 for sample 5
 Observed maximum of 67 days to reach level 5 for sample 5 
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/rolling_avg_sample5.png "Rolling Avg Duration: Sample 5")
+
+<img src="Screenshots/rolling_avg_sample5.png" alt="drawing" width="500"/>
 
 The boxplot below gives greater weight to these results, showing the variation between the samples, and how the data truly sits.
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/boxplot.png "Boxplot")
+
+<img src="Screenshots/boxplot.png" alt="drawing" width="700"/>
 
 We can see that sample 1 has far more outliers than the other samples
 
@@ -172,18 +177,17 @@ Generally the words in this sample have been more consistently in less time than
 Given that I want to evaluate the performance of each sample, understanding their weak points is important. The below visuals shows the number of occurrences a word decreased from level n to n-1.
 the following graph shows level 5 to be a weak point - potentially too greater time between previous levels to retain the spelling (would maybe look at the distribution of words in each rank (normalise for each sample)
 
-![alt text](https://github.com/MattPCollins/Analysis/blob/master/Screenshots/level_regression_hist.png "Level Degradations")
-
+<img src="Screenshots/level_regression_hist.png" alt="drawing" width="500"/>
 
 This shows that across the samples, level 5 is generally the weakest (we ignore level 0 as the word is just being learned for the first time and we do expect failures!), hence is a good target to improve upon.
 
 
-What was I interested in seeing:
-Level regression for each sample
-Min days to level N and level M
-Avg days to level N and level M
-Variation in above.
-Avg success for samples
+What was I interested in seeing:  
+Level regression for each sample  
+Min days to level N and level M  
+Avg days to level N and level M  
+Variation in above  
+Avg success for samples  
 
 ## Model Tuning
 
@@ -204,4 +208,3 @@ There are a variety of other tests that I could look at in regards to measuring 
    
    On top of this, If a particular Kanji is frequently used, the chances are that I will be better at recalling it (at least when more words using this Kanji are added.
    
-*
