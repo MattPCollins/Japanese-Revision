@@ -17,7 +17,7 @@ This Data Science project was aimed to help improve my understanding of my learn
 * Scraped additional detail on vocabulary to provide further insights.
 * Practiced vocabulary using different samples of level-up boundaries in spaced repetition algorithm.
 * Analysed data to confirm algorithm was appropriately tuned to enhance my efficiency at learning.
-* Chose sample with X% faster learning rate that demonstrated long-term recollection.
+* Chose sample with fastest learning rate that also demonstrated long-term recollection.
 
 ##  Code and resources
 * Python version: 3.7
@@ -36,6 +36,8 @@ A lot of the data is separated into different fact and dimension files for repor
 |...        	|...        	|...        	|...        	 |...        	 |...        	|...           |...        |
 |611	        |factory        |こうじょう	      |工場	            |17/02/2021     |3             |4             |1          |
 |612	        |last train     |しゅうでん	      |終電	            |17/02/2021     |3	           |5	          |1          |
+|...        	|...        	|...        	|...        	 |...        	 |...        	|...           |...        |
+
 
 * Dimensional Level csv file
 
@@ -45,6 +47,7 @@ A lot of the data is separated into different fact and dimension files for repor
 |1|1	|10|05/10/2020|	1|
 |2|2	|10|04/10/2020|	1|
 |3|3	|8 |07/02/2021|	1|
+|...|...	|... |...|...|
 
 * Fact Results csv file
 
@@ -55,6 +58,8 @@ A lot of the data is separated into different fact and dimension files for repor
 |...|...            |...  |... |...        |...   |
 |16890|492|0|1|03/03/2021|18:24:12|
 |16891|611|0|1|03/03/2021|18:24:22|
+|...|...            |...  |... |...        |...   |
+
 
 * Fact Level csv file
 
@@ -65,6 +70,8 @@ A lot of the data is separated into different fact and dimension files for repor
 |... |...  |... |...        |...   |
 |5620|	611|	1|	19/02/2021|	4|
 |5621|	612|	1|	19/02/2021|	5|
+|... |...  |... |...        |...   |
+
 
 Note: I have not detailed each column as several are out-of-scope for this project.
 
@@ -99,20 +106,21 @@ I also wanted some qualitative description of the level values, which demonstrat
 
 
 First up is the daily count of practices. We can see that when this project started back in May and June last year the number of daily practices was a lot higher, no doubt enhanced by the initial enthusiasm and energy to the project in lockdown, but also due to the inefficiency of some aspects of the model and algorithm, which required more random practices to ensure all words required that day were practiced. As this was tuned, fewer attempts were required and the numbers generally drop.
+Higher activity again at the end are again explainable due to a new release to the app, spurring enthusiasm to revise more.
 
 <img src="Screenshots/streak_age_plot.png" alt="drawing" width="500"/>
 
 
 The scatter plot above shows the age (in days) of a word in the dictionary versus the Level. As we can expect, there is a general trend to this - over time, we expect a word to increase in level until it is retired from practice (level 10).
 
-Most notably, we see that as age increases the levels for each of the words widens and diverges. This initial investigation gave me some insight I had overlooked initially: Some of the older words (possibly configured with poor level-up boundaries) have not been able to progress completely, and due to the greater time between attempts at higher levels, are more easily forgotten and get stuck at the current level.
+Most notably, we see that as age increases the levels for each of the words widens and diverges. This investigation gave me some insight I had overlooked initially: Some of the older words (possibly configured with poor level-up boundaries) have not been able to progress completely, and due to the greater time between attempts at higher levels, are more easily forgotten and get stuck at the current level. 
 
 Going back to the EDA phase, another column was added to the DataFrame named 'Reset'. This describes a word that does or does not need to be set back to level zero given its age - this is best described in the revised scatter plot below:
 
 <img src="Screenshots/streak_age_plot_reset.png" alt="drawing" width="500"/>
 
 
-This led me to implement logic in my program which raises these words as a notification for me, giving the option to reset the word back to level 0, for re-practicing. Resetting these means that the words are practiced more frequently again, and I have a better chance of recollection. I will store these refreshed words to keep a specific view on, which will be investigated separate to this project.
+This led me to implement logic in my program which raises these words as a notification for me, giving the option to reset the word back to level 0, for re-practicing. Resetting these means that the words are practiced more frequently again, and I have a better chance of recollection. I will store these refreshed words to keep a specific view on, which will be investigated separate to this project, and not impact these results.
 
 
 *plot here!
@@ -194,13 +202,11 @@ Avg success for samples
 
 
 ## Project Outcome / Things I learned
-
+As mentioned earlier, I've identified some words that have been a bit more troublesome to remember at the higher levels also hang around without progressing, due to the longer times between practices.
+As such, I've implemented a new mechanism to "reset" these words back to 0 to practice again from scratch. This has been labelled in the data in such a way that they are not included in this investigation.
 
 ## Next Steps
 There are a variety of other tests that I could look at in regards to measuring my long-term recollection of the vocabulary/Kanji, and I have listed some of the following avenues to explore later:
-* Percentage success of recollection after X days, per sample
-
-   For example, X = 31. After 31 days, how good am I at recalling and writing a word? Sample 5 gets me to practice the word more times in a shorter period of time, but is sufficient to store the Kanji more successfully in my long-term memory?
 
 * Does Kanji complexity impact success?
 
