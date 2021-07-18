@@ -194,13 +194,11 @@ Percent of words with no failures: 66.0%
 
 We can see that Sample 1 and 4 generally lead to better long term recollection than Sample 5, being neck and neck at this stage.
 
-## Model Tuning
-As mentioned earlier, I've identified some words that have been a bit more troublesome to remember at the higher levels also hang around without progressing, due to the longer times between practices.
-As such, I've implemented a new mechanism to "reset" these words back to 0 to practice again from scratch. This has been labelled in the data in such a way that they are not included in this investigation.
-
-
 ## Project Outcome / Things I learned
 
+From combining this analysis, it would appear that Sample 4 is the more reliable sample to use. The box plot shows a tighter interquartile range demonstrating consistent results and the measure of long term recollection also ranks quite highly.
+
+As such, I'll be tuning future Samples using this as a baseline.
 
 ## Next Steps
 There are a variety of other tests that I could look at in regards to measuring my long-term recollection of the vocabulary/Kanji, and I have listed some of the following avenues to explore later:
