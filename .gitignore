@@ -5,4 +5,5 @@ __pycache__/
 *$py.class
 .DS_Store
 .vscode
-.grades
+.grades.csv
+.ipynb_checkpoints
