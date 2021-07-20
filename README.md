@@ -27,7 +27,7 @@ This Data Science project was aimed to help improve my understanding of my learn
 A lot of the data is separated into different fact and dimension files for reporting purposes and so is not in the correct format to perform analysis on in the raw state. As this was my own dataset, I had created it with this kind of project work in mind so there was not much cleaning that was necessary.
 
 **Existing data:**
-* Dimensional Dictionary csv file
+* Dimensional Dictionary csv file: Dictionary of words to be practiced
 
 |   Word Index  |    English    |    Hiragana   |      Kanji    |    Date Added | Rank         |    Sample    | Is Active |
 | ------------- | ------------- | ------------- | ------------- | ------------- |------------- |------------- |-----------|
@@ -39,7 +39,7 @@ A lot of the data is separated into different fact and dimension files for repor
 |...        	|...        	|...        	|...        	 |...        	 |...        	|...           |...        |
 
 
-* Dimensional Level csv file
+* Dimensional Level csv file: Current level of words for algorithm to use
 
 | |  Word Index  |    Level     |    Date   |      Sample    | 
 | - |------------- | ------------- | --------- | -------------- | 
@@ -49,7 +49,7 @@ A lot of the data is separated into different fact and dimension files for repor
 |3|3	|8 |07/02/2021|	1|
 |...|...	|... |...|...|
 
-* Fact Results csv file
+* Fact Results csv file: Track attempts over time
 
 |   |  Word Index  |    Index Relation     |    Result  |      Date    |  Time |
 | - |------------- | -------------  | --------- | -------------- | ----- | 
@@ -61,7 +61,7 @@ A lot of the data is separated into different fact and dimension files for repor
 |...|...            |...  |... |...        |...   |
 
 
-* Fact Level csv file
+* Fact Level csv file: Track changes in level over time.
 
 | |  Word Index  |    Level     |    Date   |      Sample    | 
 | - |------------- | ------------- | --------- | -------------- | 
@@ -176,8 +176,9 @@ We can see that sample 1 has far more outliers than the other samples and the in
 
 There is disparity between the sample sizes, with the number of records in sample 1 being almost double that in samples 4 and 5. This is something we can look to normalize in the future, but I believe the number of records in each sample is large enough to provide a good baseline to draw conclusions from.
 
-Looking more specifically at "the ability to perform long term recollection of a word", I've looked at the frequency a word has any failed attempts at the first time it reaches at 31 day gap in practices (when reaching Level 8). 
-I found the following:
+Looking more specifically at "the ability to perform long term recollection of a word", I've looked at the frequency a word has any failed attempts at the first time it reaches at 31 day gap in practices (when reaching Level 8).  
+
+I found the following:  
 Words in Sample 1: 91  
 Percent of words including a failure: 28.57%  
 Percent of words with no failures: 71.43%  
