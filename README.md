@@ -178,23 +178,23 @@ There is disparity between the sample sizes, with the number of records in sampl
 
 Looking more specifically at "the ability to perform long term recollection of a word", I've looked at the frequency a word has any failed attempts at the first time it reaches at 31 day gap in practices (when reaching Level 8). 
 I found the following:
-Words in Sample 1: 91
-Percent of words including a failure: 28.57%
-Percent of words with no failures: 71.43%
+Words in Sample 1: 91  
+Percent of words including a failure: 28.57%  
+Percent of words with no failures: 71.43%  
 
-Words in Sample 4: 52
-Percent words including a failure: 28.85%
+Words in Sample 4: 52  
+Percent words including a failure: 28.85%  
 Percent of words with no failures: 71.15%
 
-Words in Sample 5: 50
-Percent of words including a failure: 34.0%
-Percent of words with no failures: 66.0%
+Words in Sample 5: 50  
+Percent of words including a failure: 34.0%  
+Percent of words with no failures: 66.0%  
 
 <img src="Screenshots/sample_success_failure.png" alt="drawing" width="700"/>
 
 We can see that Sample 1 and 4 generally lead to better long term recollection than Sample 5, being neck and neck at this stage.
 
-## Project Outcome / Things I learned
+## Project Outcome
 
 From combining this analysis, it would appear that Sample 4 is the more reliable sample to use. The box plot shows a tighter interquartile range demonstrating consistent results and the measure of long term recollection also ranks quite highly.
 
